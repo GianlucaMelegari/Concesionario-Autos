@@ -35,6 +35,7 @@
             btnBorrarAuto = new Button();
             dataGridView2 = new DataGridView();
             dataGridView3 = new DataGridView();
+            btnAsignarDueño = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -113,11 +114,22 @@
             dataGridView3.Size = new Size(398, 245);
             dataGridView3.TabIndex = 6;
             // 
+            // btnAsignarDueño
+            // 
+            btnAsignarDueño.Location = new Point(820, 263);
+            btnAsignarDueño.Name = "btnAsignarDueño";
+            btnAsignarDueño.Size = new Size(108, 23);
+            btnAsignarDueño.TabIndex = 7;
+            btnAsignarDueño.Text = "Asignar Dueño";
+            btnAsignarDueño.UseVisualStyleBackColor = true;
+            btnAsignarDueño.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1457, 427);
+            Controls.Add(btnAsignarDueño);
             Controls.Add(dataGridView3);
             Controls.Add(dataGridView2);
             Controls.Add(btnBorrarAuto);
@@ -143,5 +155,6 @@
         private Button btnBorrarAuto;
         private DataGridView dataGridView2;
         private DataGridView dataGridView3;
+        private Button btnAsignarDueño;
     }
 }

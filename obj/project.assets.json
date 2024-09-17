@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gianl\\OneDrive\\Escritorio\\Repositorio GITHUB\\Concesionario-Autos\\Actividad Integradora N°1 ft.2\\Actividad Integradora 1.2.csproj",
+      "projectUniqueName": "C:\\Users\\gianl\\OneDrive\\Escritorio\\Repositorio GITHUB\\Actividad Integradora N°1 ft.2\\Actividad Integradora 1.2.csproj",
       "projectName": "Actividad Integradora 1.2",
-      "projectPath": "C:\\Users\\gianl\\OneDrive\\Escritorio\\Repositorio GITHUB\\Concesionario-Autos\\Actividad Integradora N°1 ft.2\\Actividad Integradora 1.2.csproj",
+      "projectPath": "C:\\Users\\gianl\\OneDrive\\Escritorio\\Repositorio GITHUB\\Actividad Integradora N°1 ft.2\\Actividad Integradora 1.2.csproj",
       "packagesPath": "C:\\Users\\gianl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gianl\\OneDrive\\Escritorio\\Repositorio GITHUB\\Concesionario-Autos\\Actividad Integradora N°1 ft.2\\obj\\",
+      "outputPath": "C:\\Users\\gianl\\OneDrive\\Escritorio\\Repositorio GITHUB\\Actividad Integradora N°1 ft.2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gianl\\AppData\\Roaming\\NuGet\\NuGet.Config",

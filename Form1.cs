@@ -132,5 +132,10 @@ namespace Actividad_Integradora_1._2
                 MostrarGrilla(dataGridView3, autosDeLaPersona);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e) //btnAsignarDueño
+        {
+
+        }
     }
 }
