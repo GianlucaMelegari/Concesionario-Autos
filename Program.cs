@@ -13,5 +13,6 @@ namespace Actividad_Integradora_1._2
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
+
     }
 }

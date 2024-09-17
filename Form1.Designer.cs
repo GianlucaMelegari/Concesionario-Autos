@@ -29,9 +29,15 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            btnAgregar = new Button();
+            btnAgregarPersona = new Button();
             btnBorrarPersona = new Button();
+            btnAgregarAuto = new Button();
+            btnBorrarAuto = new Button();
+            dataGridView2 = new DataGridView();
+            dataGridView3 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -45,45 +51,97 @@
             dataGridView1.Size = new Size(398, 245);
             dataGridView1.TabIndex = 0;
             // 
-            // btnAgregar
+            // btnAgregarPersona
             // 
-            btnAgregar.Location = new Point(12, 301);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(75, 23);
-            btnAgregar.TabIndex = 1;
-            btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;
+            btnAgregarPersona.Location = new Point(12, 263);
+            btnAgregarPersona.Name = "btnAgregarPersona";
+            btnAgregarPersona.Size = new Size(108, 23);
+            btnAgregarPersona.TabIndex = 1;
+            btnAgregarPersona.Text = "Agregar Persona";
+            btnAgregarPersona.UseVisualStyleBackColor = true;
+            btnAgregarPersona.Click += btnAgregar_Click;
             // 
             // btnBorrarPersona
             // 
-            btnBorrarPersona.Location = new Point(131, 301);
+            btnBorrarPersona.Location = new Point(12, 292);
             btnBorrarPersona.Name = "btnBorrarPersona";
-            btnBorrarPersona.Size = new Size(75, 23);
+            btnBorrarPersona.Size = new Size(108, 23);
             btnBorrarPersona.TabIndex = 2;
-            btnBorrarPersona.Text = "Borrar";
+            btnBorrarPersona.Text = "Borrar Persona";
             btnBorrarPersona.UseVisualStyleBackColor = true;
             btnBorrarPersona.Click += btnBorrarPersona_Click;
+            // 
+            // btnAgregarAuto
+            // 
+            btnAgregarAuto.Location = new Point(416, 263);
+            btnAgregarAuto.Name = "btnAgregarAuto";
+            btnAgregarAuto.Size = new Size(108, 23);
+            btnAgregarAuto.TabIndex = 3;
+            btnAgregarAuto.Text = "Agregar Auto";
+            btnAgregarAuto.UseVisualStyleBackColor = true;
+            btnAgregarAuto.Click += btnAgregarAuto_Click;
+            // 
+            // btnBorrarAuto
+            // 
+            btnBorrarAuto.Location = new Point(416, 292);
+            btnBorrarAuto.Name = "btnBorrarAuto";
+            btnBorrarAuto.Size = new Size(108, 23);
+            btnBorrarAuto.TabIndex = 4;
+            btnBorrarAuto.Text = "Borrar Auto";
+            btnBorrarAuto.UseVisualStyleBackColor = true;
+            btnBorrarAuto.Click += btnBorrarAuto_Click;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(416, 12);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
+            dataGridView2.Size = new Size(398, 245);
+            dataGridView2.TabIndex = 5;
+            // 
+            // dataGridView3
+            // 
+            dataGridView3.AllowUserToAddRows = false;
+            dataGridView3.AllowUserToDeleteRows = false;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Location = new Point(820, 12);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.ReadOnly = true;
+            dataGridView3.Size = new Size(398, 245);
+            dataGridView3.TabIndex = 6;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1457, 427);
+            Controls.Add(dataGridView3);
+            Controls.Add(dataGridView2);
+            Controls.Add(btnBorrarAuto);
+            Controls.Add(btnAgregarAuto);
             Controls.Add(btnBorrarPersona);
-            Controls.Add(btnAgregar);
+            Controls.Add(btnAgregarPersona);
             Controls.Add(dataGridView1);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private DataGridView dataGridView1;
-        private Button btnAgregar;
+        private Button btnAgregarPersona;
         private Button btnBorrarPersona;
+        private Button btnAgregarAuto;
+        private Button btnBorrarAuto;
+        private DataGridView dataGridView2;
+        private DataGridView dataGridView3;
     }
 }

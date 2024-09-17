@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Actividad Integradora 1.2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c6844aa6b519baa3f0e478917ca9055d09bffa7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Actividad Integradora 1.2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Actividad Integradora 1.2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
