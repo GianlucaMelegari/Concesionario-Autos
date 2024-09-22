@@ -11,55 +11,81 @@ namespace Actividad_Integradora_1._2
     {
         List<Persona> lp;
         List<Auto> la;
-        public Concesionario() { lp = new List<Persona>(); la = new List<Auto>(); }
-
-
-        //Persona
-        public void AgregarPersona(Persona pPersona)
+        public Concesionario()
         {
-            if (lp == null) lp = new List<Persona>();
-            lp.Add(pPersona.ClonPersona());
+            lp = new List<Persona>();
+            la = new List<Auto>();
+            la.AddRange(new Auto[]{new Auto("AB123GF","Fiat","Cronos","2020",10000) ,
+                                  new Auto("AG992AA","BMW","325","2030",50000) ,
+                                  new Auto("AF882AB","Ford","Maveric","2024",40000)});
         }
+
+        public void AgregarPersona(Persona pPersona)
+        { 
+            lp.Add(pPersona.ClonPersona()); 
+            //la.Remove(la.Find(x => x.Patente==pAuto.Patente));
+            //lp.Add(pPersona.ClonPersona());
+        } 
+         
         public void BorrarPersona(Persona pPersona)
         {
-            if (lp != null)
+            Persona p = lp.Find(x => x.DNI == pPersona.DNI);
+            if (p != null) lp.Remove(p);
+            la.ForEach(a => { if (a.RetornaDueño().DNI == pPersona.DNI) a.Dueño = null; });
+        }
+
+        public bool ValidarDNI(Persona pPersona) => lp.Exists(x => x.DNI == pPersona.DNI);
+
+        public void Asignar(Persona pPersona, Auto pAuto)
+        {
+            try
             {
-                Persona p = lp.Find(x => x.DNI == pPersona.DNI);
-                if (p != null) { lp.Remove(p); }
+                var auto = la.Find(a => a.Patente == pAuto.Patente);
+                if (auto == null) throw new Exception("No existe el auto a asignar !!!");
+                if (auto.RetornaDueño() != null) throw new Exception("No se puede asignar el auto porque ya posee un dueño !!!");
+                var persona = lp.Find(p => p.DNI == pPersona.DNI);
+                if (persona == null) throw new Exception("No existe la persona !!!");
+                persona.AgregarAuto(auto);  //ASOCIACION BIDIRECCIONAL
+                auto.Dueño = persona;       //ASOCIACION BIDIRECCIONAL
             }
+            catch (Exception ex) { throw ex; }
         }
-        public List<Persona> ListaDePersonas()
+        public object ListaDePersonas()
         {
-            return lp?.Select(p => p.ClonPersona()).ToList() ?? new List<Persona>();
+            return (from p in lp select new { DNI = p.DNI, Nombre = p.Nombre, Apellido = p.Apellido }).ToList();
         }
-        /*public object ListaDePersonas() 
+        public object ListaDeAutos()
         {
-            return (from p in lp select new { DNI = p.DNI, Nombre = p.Nombre, Apellido = p.Apellido }).ToList() ; 
-        }*/
+            return (from a in la select new { Patente = a.Patente, Marca = a.Marca, Modelo = a.Modelo, Año = a.Año, Precio = a.Precio }).ToList();
 
-        //Auto
-        public void AgregarAuto(Auto pAuto)
-        {
-            if (la == null) la = new List<Auto>();
-            la.Add(pAuto.ClonAuto());
         }
 
-        public void BorrarAuto(Auto pAuto)
+        public List<Auto> ListaDeAutosUnaPersona(Persona pPersona)
         {
-            if (la != null)
+            try
             {
-                Auto a = la.Find(x => x.Patente == pAuto.Patente);
-                if (a != null) { la.Remove(a); }
+                var persona = lp.Find(p => p.DNI == pPersona.DNI);
+                if (persona == null) throw new Exception("No existe la persona !!!");
+                return persona.ListaDeAutos();
             }
+            catch (Exception ex) { throw ex; }
         }
 
-        public List<Auto> ListaDeAutos()
+        public object ListaDeAutosyDuenos()
         {
-            return la?.Select(a => a.ClonAuto()).ToList();
+            return (from a in la
+                    select new
+                    {
+                        Patente = a.Patente,
+                        Marca = a.Marca,
+                        Modelo = a.Modelo,
+                        Axo = a.Año,
+                        Precio = a.Precio,
+                        DNI = a.RetornaDueño() != null ? a.RetornaDueño().DNI : "---",
+                        ApellidoNombre = a.RetornaDueño() != null ? a.RetornaDueño().Apellido + ", " + a.RetornaDueño().Nombre : "---"
+                    }).ToList();
+
         }
-        /*public object ListaDeAutos()
-        {
-            return (from p in la select new { Patente = p.Patente, Marca = p.Marca, Modelo = p.Modelo, Año = p.Modelo, Precio = p.Precio, Dueño = p.Dueño }).ToList();
-        }*/
+
     }
 }

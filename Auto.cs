@@ -10,30 +10,23 @@ namespace Actividad_Integradora_1._2
 {
     internal class Auto
     {
-        List<Persona> la;
-        public Auto() { la = new List<Persona>(); }
+        Persona dueño;
 
-        public Auto(string pPatente, string pMarca, string pModelo, string pAño, decimal pPrecio, Persona pDueño)
-        {
-            this.Patente = pPatente;    
-            this.Marca = pMarca;
-            this.Modelo = pModelo;
-            this.Año = pAño;
-            this.Precio = pPrecio;
-            this.Dueño = pDueño;
-        }
+        public Auto(string pPatente)
+        { Patente=pPatente; }
+
+
+        public Auto(string pPatente,string pMarca,string pModelo,string pAxo,decimal pPrecio) : this(pPatente)
+        { Marca=pMarca;Modelo=pModelo;Año=pAxo;Precio=pPrecio; }
+
 
         public string Patente { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Año { get; set; }
         public decimal Precio { get; set; }
-        public Persona Dueño { get; set; }
-
-        public Auto ClonAuto()
-        {
-            return new Auto(Patente, Marca, Modelo, Año, Precio, Dueño);
-        }
+        public Persona Dueño { set { dueño = value; } }
+        public Persona RetornaDueño() { return dueño; }
 
 
     }
